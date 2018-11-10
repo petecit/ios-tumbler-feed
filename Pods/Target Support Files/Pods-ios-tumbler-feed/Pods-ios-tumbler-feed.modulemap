@@ -1,0 +1,6 @@
+framework module Pods_ios_tumbler_feed {
+  umbrella header "Pods-ios-tumbler-feed-umbrella.h"
+
+  export *
+  module * { export * }
+}
