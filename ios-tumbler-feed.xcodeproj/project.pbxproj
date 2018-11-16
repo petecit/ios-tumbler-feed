@@ -13,6 +13,7 @@
 		D053AD032197489C003FA1D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D053AD012197489C003FA1D6 /* Main.storyboard */; };
 		D053AD052197489D003FA1D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D053AD042197489D003FA1D6 /* Assets.xcassets */; };
 		D053AD082197489D003FA1D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D053AD062197489D003FA1D6 /* LaunchScreen.storyboard */; };
+		D058C624219F55F20087DFF3 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D058C623219F55F20087DFF3 /* PhotoDetailsViewController.swift */; };
 		D0F65EE72197583C00878258 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F65EE62197583C00878258 /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		D053AD042197489D003FA1D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D053AD072197489D003FA1D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D053AD092197489D003FA1D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D058C623219F55F20087DFF3 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
 		D0F65EE62197583C00878258 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		FF1E7442DF4C9333F2B16C55 /* Pods-ios-tumbler-feed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-tumbler-feed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-tumbler-feed/Pods-ios-tumbler-feed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,15 +82,32 @@
 		D053ACFC2197489C003FA1D6 /* ios-tumbler-feed */ = {
 			isa = PBXGroup;
 			children = (
+				D058C625219F58F60087DFF3 /* Views */,
+				D058C622219F558B0087DFF3 /* ViewControllers */,
 				D053ACFD2197489C003FA1D6 /* AppDelegate.swift */,
-				D00E5FC1219749E000DED44B /* PhotosViewController.swift */,
 				D053AD012197489C003FA1D6 /* Main.storyboard */,
 				D053AD042197489D003FA1D6 /* Assets.xcassets */,
 				D053AD062197489D003FA1D6 /* LaunchScreen.storyboard */,
 				D053AD092197489D003FA1D6 /* Info.plist */,
-				D0F65EE62197583C00878258 /* PhotoCell.swift */,
 			);
 			path = "ios-tumbler-feed";
+			sourceTree = "<group>";
+		};
+		D058C622219F558B0087DFF3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D058C623219F55F20087DFF3 /* PhotoDetailsViewController.swift */,
+				D00E5FC1219749E000DED44B /* PhotosViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D058C625219F58F60087DFF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0F65EE62197583C00878258 /* PhotoCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D058C624219F55F20087DFF3 /* PhotoDetailsViewController.swift in Sources */,
 				D053ACFE2197489C003FA1D6 /* AppDelegate.swift in Sources */,
 				D0F65EE72197583C00878258 /* PhotoCell.swift in Sources */,
 				D00E5FC2219749E000DED44B /* PhotosViewController.swift in Sources */,
