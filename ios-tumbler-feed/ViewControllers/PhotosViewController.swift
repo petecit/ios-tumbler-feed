@@ -47,6 +47,10 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
     
@@ -55,7 +59,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         
         //cell.textLabel?.text = "This is row\(indexPath.row)"
         
-        let post = posts[indexPath.row]
+        let post = posts[indexPath.section]
         
         if let photos = post["photos"] as? [[String: Any]] {
             let photo = photos[0]
@@ -76,9 +80,34 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = sender as! UITableViewCell
         
         if let indexPath = tableView.indexPath(for: cell) {
-            let post = posts[indexPath.row]
+            let post = posts[indexPath.section]
             let photoDetailViewController = segue.destination as! PhotoDetailsViewController
             photoDetailViewController.post = post
         }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+        headerView.backgroundColor = UIColor(white: 1, alpha: 0.9)
+        
+        let profileView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        profileView.clipsToBounds = true
+        profileView.layer.cornerRadius = 15;
+        profileView.layer.borderColor = UIColor(white: 0.7, alpha: 0.8).cgColor
+        profileView.layer.borderWidth = 1;
+        
+        // set the avatar
+        profileView.af_setImage(withURL: URL(string: "https://api.tumblr.com/v2/blog/humansofnewyork.tumblr.com/avatar")!)
+        headerView.addSubview(profileView)
+        
+        let post = posts[section]
+        
+        let label = UILabel(frame: CGRect(x: 50, y: 0, width: 400, height: 50))
+        label.text = post["date"] as? String
+        let fontSize: CGFloat = 20
+        label.font = label.font.withSize(fontSize)
+        headerView.addSubview(label)
+        
+        return headerView
     }
 }
